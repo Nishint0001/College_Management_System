@@ -9,8 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(path = "/arc")
-@Getter
-@Setter
+
 public class AdmissionRecordController
 {
     private final AdmissionRecordService admissionRecordService;
