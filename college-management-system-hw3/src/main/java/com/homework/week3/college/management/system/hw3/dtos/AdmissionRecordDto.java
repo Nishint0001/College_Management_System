@@ -49,7 +49,9 @@ public class AdmissionRecordDto
                 return student;
         }
 
-        public void setStudent(StudentDto student) {
+        public void setStudent(StudentDto student)
+        {
                 this.student = student;
         }
+
 }

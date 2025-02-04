@@ -12,8 +12,8 @@ import lombok.Setter;
 
 public class AdmissionRecord
 {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+   @Id
+  // @GeneratedValue(strategy = GenerationType.AUTO)
     private Long admission_id;
 
     private int fees;

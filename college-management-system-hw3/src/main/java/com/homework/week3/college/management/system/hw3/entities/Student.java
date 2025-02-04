@@ -6,7 +6,6 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
 import java.util.List;
 
 @Entity
@@ -36,7 +35,7 @@ public class Student
     @JsonIgnore
     private AdmissionRecord admissionRecord;
 
-    @ManyToMany
+    @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable
             (
                     name = "student_professor",
@@ -44,10 +43,10 @@ public class Student
                     inverseJoinColumns = @JoinColumn(name = "professor_id")
 
             )
+    @JsonIgnore
     private List<Professor> professorList;
 
-
-    @ManyToMany
+    @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable
             (
                     name = "student_subject",
@@ -55,6 +54,7 @@ public class Student
                     inverseJoinColumns = @JoinColumn(name = "subject_id")
 
             )
+    @JsonIgnore
     private List<Subject> subjectList;
 
     public Long getStudent_id() {
@@ -85,15 +85,18 @@ public class Student
         return professorList;
     }
 
-    public void setProfessorList(List<Professor> professorList) {
+    public void setProfessorList(List<Professor> professorList)
+    {
         this.professorList = professorList;
     }
 
-    public List<Subject> getSubjectList() {
+    public List<Subject> getSubjectList()
+    {
         return subjectList;
     }
 
-    public void setSubjectList(List<Subject> subjectList) {
+    public void setSubjectList(List<Subject> subjectList)
+    {
         this.subjectList = subjectList;
     }
 }

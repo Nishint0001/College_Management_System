@@ -38,7 +38,7 @@ public class StudentController
         return studentService.getAllStudents();
     }
 
-    @PutMapping
+    @PutMapping("/{id}")
     public StudentDto update(Long id,StudentDto studentDto)
     {
         return studentService.updateStudentById(id,studentDto);
@@ -50,7 +50,7 @@ public class StudentController
         return studentService.deleteDataById(id);
     }
 
-    @DeleteMapping
+    @DeleteMapping("/all")
     public String deleteAll()
     {
         return studentService.deleteAll();

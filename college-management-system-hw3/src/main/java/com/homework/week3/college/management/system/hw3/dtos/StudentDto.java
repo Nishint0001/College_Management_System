@@ -9,7 +9,6 @@ import java.util.List;
 
 public class StudentDto
 {
-
     private Long student_id;
 
     private String name;

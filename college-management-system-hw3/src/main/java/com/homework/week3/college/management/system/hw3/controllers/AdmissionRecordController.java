@@ -9,10 +9,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping(path = "/arc")
-
-
-@NoArgsConstructor(force = true)
-
 @Getter
 @Setter
 public class AdmissionRecordController

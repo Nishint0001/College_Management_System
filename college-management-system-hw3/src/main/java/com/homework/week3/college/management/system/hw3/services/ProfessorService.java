@@ -72,25 +72,25 @@ public class ProfessorService
 
     //deleteById
 
-    public Boolean deleteById(Long id)
+    public String deleteById(Long id)
     {
         if(professorRepo.findById(id).isPresent()==true)
         {
             professorRepo.deleteById(id);
-            return true;
+            return "DELETE SUCCESSFULLY";
         }
 
-        return false;
+        return "ID NOT PRESENT";
     }
 
-    public Boolean deleteAll()
+    public String deleteAll()
     {
         if(professorRepo.findAll().isEmpty()==false)
         {
             professorRepo.deleteAll();
-            return true;
+            return "ALL ID DELETED";
         }
-        return false;
+        return "DATABASE IS EMPTY ";
     }
 
 }
